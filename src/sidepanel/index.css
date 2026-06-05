@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Brand: LinkedIn blue (#0A66C2) + X/Twitter black.
+ * Light mode = "blue on white/black"; dark mode = the inverse "blue on black".
+ * Only blue + black + neutral grays are used (a restrained red is kept ONLY for
+ * destructive/error signals, which would be unsafe to render in brand color).
+ */
+:root {
+  --background: 210 40% 99%;
+  --foreground: 214 60% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 214 60% 8%;
+  --primary: 210 90% 40%; /* LinkedIn blue #0A66C2 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 35% 94%;
+  --secondary-foreground: 214 50% 14%;
+  --muted: 210 30% 95%;
+  --muted-foreground: 214 14% 40%;
+  --accent: 210 90% 95%;
+  --accent-foreground: 210 90% 30%;
+  --destructive: 0 70% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 213 25% 88%;
+  --input: 213 25% 88%;
+  --ring: 210 90% 40%;
+  --radius: 0.6rem;
+}
+
+.dark {
+  --background: 214 38% 5%; /* X/Twitter black */
+  --foreground: 210 16% 93%;
+  --card: 214 30% 9%;
+  --card-foreground: 210 16% 93%;
+  --primary: 203 88% 53%; /* brighter blue #1D9BF0 on black */
+  --primary-foreground: 214 45% 7%;
+  --secondary: 214 26% 14%;
+  --secondary-foreground: 210 16% 93%;
+  --muted: 214 24% 14%;
+  --muted-foreground: 210 12% 62%;
+  --accent: 206 55% 18%;
+  --accent-foreground: 203 88% 78%;
+  --destructive: 0 65% 52%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 212 18% 18%;
+  --input: 212 18% 20%;
+  --ring: 203 88% 53%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin, themed scrollbars for the narrow panel. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
